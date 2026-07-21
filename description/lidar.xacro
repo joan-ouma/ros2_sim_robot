@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- LASER JOINT (Mounting to Chassis) -->
+  <joint name="laser_joint" type="fixed">
+    <parent link="chassis"/>
+    <child link="laser_frame"/>
+    <origin xyz="0.09 0 0.19" rpy="0 0 0"/>
+  </joint>
+
+  <!-- PHYSICAL LIDAR PUCK -->
+  <link name="laser_frame">
+    <visual>
+      <geometry>
+        <cylinder length="0.055" radius="0.07"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.055" radius="0.07"/>
+      </geometry>
+      <material name="black"/>
+    </collision>
+    <xacro:inertial_cylinder mass="0.1" radius="0.07" length="0.055">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:inertial_cylinder>
+  </link>
+
+  <!-- GAZEBO GPU LIDAR SENSOR CONFIGURATION -->
+  <gazebo reference="laser_frame">
+    <sensor name="laser" type="gpu_lidar">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <lidar>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.3</min>
+          <max>12.0</max>
+        </range>
+      </lidar>
+      <topic>/scan</topic>
+      <gz_frame_id>laser_frame</gz_frame_id>
+    </sensor>
+  </gazebo>
+
+  <!-- GAZEBO SENSORS SYSTEM PLUGIN -->
+  <gazebo>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+  </gazebo>
+
+</robot>
