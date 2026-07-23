@@ -52,7 +52,7 @@ def generate_launch_description():
     spawn_entity = Node(package='ros_gz_sim', executable='create',
                         arguments=['-topic', 'robot_description',
                                    '-name', 'my_robot',
-                                   '-z', '0.1'],
+                                   '-z', '0.5'],
                         output='screen')
               
     # Launch the ROS-gazebo bridge for normal topics
