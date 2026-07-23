@@ -42,11 +42,10 @@ def generate_launch_description():
             )
 
     # Include the Gazebo launch file, provided by the ros_gz_sim package
-    # The -s flag here forces headless mode so the GUI doesn't crash your computer
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')]),
-                    launch_arguments={'gz_args': ['-r -v4 -s ', world], 'on_exit_shutdown': 'true'}.items()
+                    launch_arguments={'gz_args': ['-r -v4 ', world], 'on_exit_shutdown': 'true'}.items()
              )
 
     # Run the spawner node from the ros_gz_sim package.
