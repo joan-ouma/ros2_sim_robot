@@ -4,20 +4,16 @@
     <static>true</static>
     <link name="walls_link">
       <visual name="visual">
-        <pose>0.14 6.44 0.7578 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://gamefield/meshes/gamefield.obj</uri>
-            <scale>0.01 0.01 0.01</scale>
+            <uri>model://gamefield/meshes/gamefield_fixed.obj</uri>
           </mesh>
         </geometry>
       </visual>
       <collision name="collision">
-        <pose>0.14 6.44 0.7578 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://gamefield/meshes/gamefield.obj</uri>
-            <scale>0.01 0.01 0.01</scale>
+            <uri>model://gamefield/meshes/gamefield_fixed.obj</uri>
           </mesh>
         </geometry>
       </collision>
