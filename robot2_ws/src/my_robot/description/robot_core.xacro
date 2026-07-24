@@ -97,14 +97,14 @@
     <link name="front_right_wheel">
         <visual>
             <geometry>
-                <cylinder length="0.031" radius="0.05" />
+                <cylinder length="0.031" radius="0.0425" />
             </geometry>
             <material name="blue"/>
         </visual>
         
         <collision>
             <geometry>
-                <sphere radius="0.05" />
+                <sphere radius="0.0425" />
             </geometry>
             <material name="blue"/>
         </collision>
@@ -115,7 +115,7 @@
 
     </link>
 
-    <gazebo reference="front_left_wheel">
+    <gazebo reference="front_right_wheel">
     </gazebo>
 
     <!-- BACK LEFT WHEEL -->

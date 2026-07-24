@@ -22,9 +22,18 @@
       <!-- OUTPUT -->
       <frame_id>odom</frame_id>
       <child_frame_id>base_link</child_frame_id>
-      <odom_topic>odom</odom_topic>            
-      <tf_topic>tf</tf_topic>
+      <odom_topic>odom_demo</odom_topic>            
+      <tf_topic>tf_demo</tf_topic>
 
+    </plugin>
+
+    <!-- GROUND TRUTH ODOMETRY PUBLISHER -->
+    <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+      <odom_frame>odom</odom_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <odom_topic>odom</odom_topic>
+      <tf_topic>tf</tf_topic>
     </plugin>
 
     <plugin name="gz::sim::systems::JointStatePublisher" filename="gz-sim-joint-state-publisher-system">
