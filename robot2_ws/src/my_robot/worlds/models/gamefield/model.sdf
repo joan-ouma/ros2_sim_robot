@@ -7,8 +7,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://gamefield/meshes/Gamefield.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
+            <uri>model://gamefield/meshes/Gamefield_scaled.stl</uri>
           </mesh>
         </geometry>
          <surface>
@@ -24,8 +23,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://gamefield/meshes/Gamefield.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
+            <uri>model://gamefield/meshes/Gamefield_scaled.obj</uri>
           </mesh>
         </geometry>
         <material>
