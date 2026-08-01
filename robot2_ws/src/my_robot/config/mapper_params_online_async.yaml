@@ -12,3 +12,7 @@ slam_toolbox:
     minimum_time_interval: 0.1
     transform_timeout: 0.2
     tf_buffer_duration: 30.0
+
+    # 3. Memory management (Good for Pi)
+    max_poly_nodes: 0
+    stack_size_to_use: 40000000
