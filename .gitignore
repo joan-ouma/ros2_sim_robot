@@ -1,1 +1,5 @@
 slam.md
+build/
+install/
+log/
+venv/
