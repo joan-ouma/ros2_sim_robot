@@ -43,3 +43,12 @@ Source your workspace and launch the main simulation file. This will open Gazebo
 
 ```bash
 source install/setup.bash
+ros2 launch my_robot launch_sim.launch.py
+```
+
+### 3. Drive the Robot (Teleop)
+
+In a **second terminal**, run the teleop node to control the robot with your keyboard:
+
+```bash
+source /opt/ros/$ROS_DISTRO/setup.bash
