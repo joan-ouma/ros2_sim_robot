@@ -12,3 +12,13 @@ A complete ROS 2 package featuring a differential-drive robot simulated in moder
 * **SLAM Ready:** Comes with a pre-configured `slam_toolbox` setup for online asynchronous mapping, allowing the robot to build detailed 2D maps of the competition field using simulated LiDAR.
 
 ---
+
+## 🛠️ Prerequisites
+
+Ensure you have the required ROS 2 packages and Gazebo simulation drivers installed:
+
+```bash
+sudo apt update
+sudo apt install ros-$ROS_DISTRO-ros-gz-sim ros-$ROS_DISTRO-ros-gz-bridge ros-$ROS_DISTRO-teleop-twist-keyboard ros-$ROS_DISTRO-slam-toolbox
+```
+
