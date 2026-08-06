@@ -34,3 +34,12 @@ Open a terminal and navigate to your workspace directory to compile the package:
 
 ```bash
 cd ~/Desktop/ros2_sim_robot/robot2_ws
+colcon build --symlink-install
+```
+
+### 2. Launch the Simulation Environment
+
+Source your workspace and launch the main simulation file. This will open Gazebo, spawn the competition world, and place `my_robot` into the environment.
+
+```bash
+source install/setup.bash
