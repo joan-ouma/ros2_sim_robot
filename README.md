@@ -22,3 +22,15 @@ sudo apt update
 sudo apt install ros-$ROS_DISTRO-ros-gz-sim ros-$ROS_DISTRO-ros-gz-bridge ros-$ROS_DISTRO-teleop-twist-keyboard ros-$ROS_DISTRO-slam-toolbox
 ```
 
+---
+
+## 🚀 Running the Simulation
+
+Follow these steps to launch the robot in the Gazebo simulator and drive it around.
+
+### 1. Build the Workspace
+
+Open a terminal and navigate to your workspace directory to compile the package:
+
+```bash
+cd ~/Desktop/ros2_sim_robot/robot2_ws
