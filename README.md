@@ -52,3 +52,30 @@ In a **second terminal**, run the teleop node to control the robot with your key
 
 ```bash
 source /opt/ros/$ROS_DISTRO/setup.bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+*Note: Ensure your terminal is focused to send keyboard commands to the robot.*
+
+---
+
+## 🗺️ Running SLAM (Mapping)
+
+This package is fully configured to generate 2D maps of the environment using LiDAR and Odometry data via the `slam_toolbox`.
+
+1. **Launch the Simulation:** (As described above in step 2)
+2. **Start the SLAM Node:** In a **new terminal**, launch the SLAM toolbox with the custom configuration parameters:
+   ```bash
+   source ~/Desktop/ros2_sim_robot/robot2_ws/install/setup.bash
+   ros2 launch my_robot slam.launch.py
+   ```
+3. **Open RViz2:** In a **third terminal**, run `rviz2` to visualize the mapping process.
+   * Change the **Fixed Frame** to `map`.
+   * Add the **Map** display and set the topic to `/map`.
+   * Add the **LaserScan** display and set the topic to `/scan` to see the live LiDAR rays.
+4. **Map the Environment:** Drive the robot around the gamefield using the `teleop_twist_keyboard` terminal until the entire area is discovered.
+5. **Save the Map:** Once satisfied with the map, save it using the `nav2_map_server`:
+   ```bash
+   ros2 run nav2_map_server map_saver_cli -f my_competition_map
+   ```
+
+For a deeper dive into how SLAM works in this project, check out the included [Beginner's Guide to SLAM](slam.md) file!
